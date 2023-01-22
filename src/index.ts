@@ -1,22 +1,27 @@
-console.log('Try npm run lint/fix!');
-const longString =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet diam.';
-const trailing = 'Semicolon';
-const why = 'am I tabbed?';
+import {ApolloServer} from '@apollo/server';
+import {startStandaloneServer} from '@apollo/server/standalone';
+import mongoose from 'mongoose';
 
-export function doSomeStuff(
-  withThis: string,
-  andThat: string,
-  andThose: string[]
-) {
-  //function on one line
-  if (!andThose.length) {
-    return false;
-  }
-  console.log(withThis);
-  console.log(andThat);
-  console.dir(andThose);
-  return;
-}
-// TODO: more examples
-console.log('Hello World!');
+const MONGODB = 'mongodb://localhost:27017';
+
+//Apollo Server
+//
+//
+
+import typeDefs from './graphql/typeDefs';
+import resolvers from './graphql/resolvers';
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
+mongoose.set('strictQuery', false);
+mongoose
+  .connect(MONGODB)
+  .then(async () => {
+    console.log('MongoDB Connected.');
+  })
+  .then(async () => {
+    const {url} = await startStandaloneServer(server);
+    console.log(`🚀 Server ready at ${url}`);
+  });

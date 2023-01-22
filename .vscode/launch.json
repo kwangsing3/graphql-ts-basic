@@ -4,16 +4,38 @@
     // 如需詳細資訊，請瀏覽: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        // {
+        //     "type": "node",
+        //     "request": "launch",
+        //     "name": "啟動程式",
+        //     "skipFiles": [
+        //         "<node_internals>/**"
+        //     ],
+        //     "program": "${workspaceFolder}/src/index.ts",
+        //     "preLaunchTask": "tsc: build - tsconfig.json",
+        //     "outFiles": [
+        //         "${workspaceFolder}/build/**/*.js"
+        //     ]
+        // },
         {
-          "name": "Nodemon: Launch Express.js + TypeScript",
-          "type": "node",
-          "request": "launch",
-          "runtimeExecutable": "npm",
-          "runtimeArgs": [
-            "run-script",
-            "start"
-          ],
-          "sourceMaps": true,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "name": "nodemon",
+            "program": "${workspaceFolder}/src/index.ts",
+            "request": "launch",
+            "restart": true,
+            "runtimeExecutable": "nodemon",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node",
+            "outFiles": [
+                "${workspaceFolder}/build/**/*.js"
+            ],
+            "args": [
+                "--watch",
+            ],
+            "preLaunchTask": "tsc: build - tsconfig.json",
         },
-      ]
+    ]
 }
