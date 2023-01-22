@@ -1,0 +1,37 @@
+{
+  "name": "graphcql-ts-basic",
+  "version": "1.0.0",
+  "description": "基於GraphcQL的設計介面，與MongoDB互動的Typescript web Server範例",
+  "main": "build/index.js",
+  "scripts": {
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "start:build": "tsc -w",
+    "start:run": "nodeman build/index.js",
+    "start": "concurrently npm:start:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwangsing3/graphcql-ts-basic.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwangsing3/graphcql-ts-basic/issues"
+  },
+  "homepage": "https://github.com/kwangsing3/graphcql-ts-basic#readme",
+  "devDependencies": {
+    "@types/node": "^14.11.2",
+    "concurrently": "^7.6.0",
+    "gts": "^3.1.1",
+    "typescript": "~4.7.0"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.3.1",
+    "graphql": "^16.6.0",
+    "mongoose": "^6.8.4",
+    "nodeman": "^1.1.2"
+  }
+}
