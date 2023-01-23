@@ -2,7 +2,7 @@ import Recipe from '../model/recipe';
 export default {
   Query: {
     async recipe(_: unknown, content: {ID: string}) {
-      return await Recipe.findById(content);
+      return await Recipe.findById({_id:content.ID});
     },
     async getRecipes(_: unknown, amount: number) {
       return await Recipe.find().sort({createAt: -1}).limit(amount);
