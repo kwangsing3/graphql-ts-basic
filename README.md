@@ -1,4 +1,4 @@
-# graphcql-ts-basic
+# graphql-ts-basic
 
 基於 GraphcQL 的設計介面，與 MongoDB 互動的 Typescript web Server 範例專案。
 
@@ -33,7 +33,7 @@ IDE: visual code
 # How to start with?
 
 ```bash
-$ git clone https://github.com/kwangsing3/graphcql-ts-basic
+$ git clone https://github.com/kwangsing3/graphql-ts-basic
 
 $ npm install
 
